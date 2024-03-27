@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google dococ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #secret-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 20px;
+      height: 20px;
+      opacity: 0; /* Make button invisible */
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="secret-text">
+    hello why u do this<br><br>mothere<br><br>over
+  </div>
+  <button id="secret-button" onclick="changeText()">Hidden Button</button>
+
+  <script>
+    var flag = false;
+
+    function changeText() {
+      var textElement = document.getElementById("secret-text");
+      var newText = "1. Quelles sont tes qualités?<br><br>Personaement, Je suits intelligent et Je suis tres gentil, vraiment tres gentil. Cependant, Je ne suis parresseux ni egoiste. Je suis assez drole et Je Pense que je suis debrouillard<br><br>2. Tu t’entends bien avec ton frère/ta sœur?<br><br>Voui, en general, je mentends bien avec ma soeur parce quelle est adorable et rigolote<br><br>3. Quel genre de musique aimes-tu?<br><br>Je ecoute un petit peu du tout, du RnB, du pop rock et rap parce que cest un Moyen dexpression<br><br>4. Qu’est-ce que tu portes normalement?<br><br>Dhabitude, jai un style Plutot sportif donc je porte une chemise blanc et un short vert kaki avec des baskets.<br><br>5. Qu'est-ce que tu aimes faire le week-end?<br><br>Jaime faire plusieurs choses le weekend, come passer du temps avec ma famille et mes amis, faire";
+      
+      if (!flag) {
+        textElement.innerHTML = newText;
+        flag = true;
+      } else {
+        var originalText = "hello why u do this<br><br>mothere<br><br>overthereblud<br><br>hi";
+        textElement.innerHTML = originalText;
+        flag = false;
+      }
+    }
+  </script>
+</body>
+</html>
